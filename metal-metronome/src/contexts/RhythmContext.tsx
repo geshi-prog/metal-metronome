@@ -66,7 +66,7 @@ export const RhythmProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const [currentStep, setCurrentStep] = useState(0);
     const [currentAccentStep, setCurrentAccentStep] = useState(0);
     const [muteStates, setMuteStates] = useState<boolean[]>(Array(4).fill(true));
-    const [rhythmUnits, setRhythmUnits] = useState<RhythmUnit[]>(Array(4).fill({ n: 2, m: 3 }));
+    const [rhythmUnits, setRhythmUnits] = useState<RhythmUnit[]>(Array(4).fill({ n: 5, m: 3 }));
     const [currentRhythmSteps, setCurrentRhythmSteps] = useState<number[]>(Array(4).fill(0));
 
     useEffect(() => {

@@ -34,7 +34,7 @@ const PartPanel: React.FC<Props> = ({ label, index }) => {
     
             {/* Visualizer 部分に高さ制限とflex調整を追加！ */}
             <div className="flex-1 w-full flex items-center justify-center overflow-hidden">
-                <RhythmVisualizer />
+                <RhythmVisualizer partIndex={index} />
             </div>
 
             {/* ボタンエリア */}

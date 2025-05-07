@@ -15,6 +15,8 @@
 import * as Tone from 'tone';
 
 let rhythmEvents: number[] = [];
+let rhythmParts: Tone.Part[] = [];
+let tempoPart: Tone.Part | null = null;
 
 const clickHighPlayer = new Tone.Player('/sounds/click_high.wav').toDestination();
 const clickPlayer = new Tone.Player('/sounds/click.wav').toDestination();
@@ -59,24 +61,27 @@ export const startTempoLoop = (
     setCurrentAccentStep: (step: number) => void,
     numerator: number
 ) => {
-    Tone.Transport.cancel();
-    Tone.Transport.bpm.value = bpm;
-    Tone.Transport.loop = true;
-    Tone.Transport.loopEnd = getNoteSymbol(noteValue); // 1拍ずつ繰り返す
+    const secondsPerBeat = 60 / bpm;
 
-    let step = numerator - 1;
+    if (tempoPart) {
+        tempoPart.dispose();
+    }
 
-    const noteSymbol = getNoteSymbol(noteValue);
+    const events: [number, number][] = Array.from({ length: numerator }, (_, i) => [
+        i * secondsPerBeat,
+        i,
+    ]);
 
-    const tempoEvent = Tone.Transport.scheduleRepeat((time) => {
-        Tone.Draw.schedule(() => {
-            setCurrentAccentStep(step);
-        }, time);
+    tempoPart = new Tone.Part((time, step) => {
         playTempoClick(accents[step], time);
-        step = (step + 1) % numerator;
-    }, noteSymbol);
+        Tone.Draw.schedule(() => setCurrentAccentStep(step), time);
+    }, events);
 
-    rhythmEvents.push(tempoEvent);
+    tempoPart.loop = true;
+    tempoPart.loopEnd = secondsPerBeat * numerator;
+    tempoPart.start(0);
+
+    rhythmParts.push(tempoPart);
 };
 
 /**
@@ -87,38 +92,44 @@ export const startRhythmLoop = (
     rhythmUnits: { n: number; m: number }[],
     muteStates: boolean[],
     partCount: number,
-    numerator: number,
-    noteValue: "quarter" | "eighth" | "dotted-eighth",
     setCurrentRhythmSteps: (steps: number[]) => void
 ) => {
     const secondsPerBeat = 60 / bpm;
-    const loopDuration = secondsPerBeat * numerator;
+    const stepPositions = Array(partCount).fill(0);
 
-    const loopEvent = Tone.Transport.scheduleRepeat((loopStartTime) => {
-        for (let partIndex = 0; partIndex < partCount; partIndex++) {
-            const { n, m } = rhythmUnits[partIndex];
-            const total = secondsPerBeat * n;
-            const interval = total / m;
+    for (let partIndex = 0; partIndex < partCount; partIndex++) {
+        const { n, m } = rhythmUnits[partIndex];
+        const loopEnd = secondsPerBeat * n;
+        const interval = loopEnd / m;
 
-            // loopDurationにnが何回入るかを求める
-            const repetitions = Math.floor(loopDuration / total);
+        const events: [number, () => void][] = [];
 
-            for (let r = 0; r < repetitions; r++) {
-                const offsetBase = r * total;
-                for (let i = 0; i < m; i++) {
-                    const offset = offsetBase + i * interval;
-                    const scheduledTime = loopStartTime + offset;
-                    playBeat(partIndex, muteStates[partIndex], scheduledTime);
+        for (let i = 0; i < m; i++) {
+            const time = i * interval;
+            events.push([
+                time,
+                () => {
+                    playBeat(partIndex, muteStates[partIndex]);
+                    stepPositions[partIndex] = i;
+                    setCurrentRhythmSteps([...stepPositions]);
                 }
-            }
+            ]);
         }
-    }, loopDuration);
 
-    rhythmEvents.push(loopEvent);
+        const part = new Tone.Part((time, callback) => {
+            Tone.Draw.schedule(() => callback(), time);
+        }, events);
 
-    Tone.Transport.loop = true;
-    Tone.Transport.loopStart = 0;
-    Tone.Transport.loopEnd = loopDuration;
+        part.loop = true;
+        part.loopEnd = loopEnd;
+        part.start(0);
+
+        rhythmParts.push(part);
+    }
+
+    // Transport はループしないようにして、
+    // 各 Part に任せる
+    Tone.Transport.loop = false;
 };
 
 /**
@@ -136,7 +147,7 @@ export const startAllLoops = (
     setCurrentRhythmSteps: (steps: number[]) => void
 ) => {
     startTempoLoop(bpm, noteValue, accents, setCurrentAccentStep, numerator);
-    startRhythmLoop(bpm, rhythmUnits, muteStates, partCount, numerator, noteValue, setCurrentRhythmSteps);
+    startRhythmLoop(bpm, rhythmUnits, muteStates, partCount, setCurrentRhythmSteps);
     Tone.Transport.start();
 };
 
@@ -148,6 +159,11 @@ export const stopAllLoops = () => {
         Tone.Transport.clear(id);
     }
     rhythmEvents = [];
+
+    for (const part of rhythmParts) {
+        part.dispose(); // Tone.Part の後始末
+    }
+    rhythmParts = [];
 
     Tone.Transport.stop();
 };

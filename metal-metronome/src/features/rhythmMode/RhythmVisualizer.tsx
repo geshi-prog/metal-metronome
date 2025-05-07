@@ -1,18 +1,29 @@
 import React from 'react';
 import { useRhythmContext } from '@/contexts/RhythmContext';
 
-const RhythmVisualizer: React.FC = () => {
-    const { numerator, displayMode, currentAccentStep } = useRhythmContext();
+type Props = {
+    partIndex: number;
+};
+
+const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
+    const {
+        rhythmUnits,
+        currentRhythmSteps,
+        displayMode,
+    } = useRhythmContext();
+
+    const { m } = rhythmUnits[partIndex];
+    const currentStep = currentRhythmSteps[partIndex];
 
     const MAX_WIDTH = 230;
     const MAX_DOT_SIZE = 24;
     const MIN_DOT_SIZE = 6;
 
-    const spacing = Math.min(MAX_WIDTH / numerator, MAX_DOT_SIZE * 1.5);
+    const spacing = Math.min(MAX_WIDTH / m, MAX_DOT_SIZE * 1.5);
     const dotSize = Math.max(MIN_DOT_SIZE, spacing * 0.6);
 
-    const points = Array.from({ length: numerator }, (_, i) => {
-        const isActive = currentAccentStep === i;
+    const points = Array.from({ length: m }, (_, i) => {
+        const isActive = currentStep === i;
 
         const baseStyle: React.CSSProperties = {
             width: dotSize,
@@ -28,8 +39,7 @@ const RhythmVisualizer: React.FC = () => {
             const margin = 10;
             const radius = (panelSize / 2) - (dotSize / 2) - margin;
 
-            // 🔄 上からスタート（-90度）
-            const angle = (360 / numerator) * i - 90;
+            const angle = (360 / m) * i - 90;
             const rad = (angle * Math.PI) / 180;
             const x = radius * Math.cos(rad);
             const y = radius * Math.sin(rad);
@@ -64,7 +74,7 @@ const RhythmVisualizer: React.FC = () => {
 
         if (displayMode === 'wave') {
             const x = i * spacing;
-            const y = 20 * Math.sin((i / numerator) * 2 * Math.PI);
+            const y = 20 * Math.sin((i / m) * 2 * Math.PI);
             return (
                 <div
                     key={i}
@@ -85,7 +95,7 @@ const RhythmVisualizer: React.FC = () => {
             <div
                 className="relative"
                 style={{
-                    width: displayMode === 'circle' ? '100%' : `${spacing * numerator}px`,
+                    width: displayMode === 'circle' ? '100%' : `${spacing * m}px`,
                     height: '100%',
                 }}
             >
