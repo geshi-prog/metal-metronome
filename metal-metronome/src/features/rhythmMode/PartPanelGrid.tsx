@@ -56,7 +56,7 @@ const PartPanelGrid: React.FC = () => {
             <div className={`grid ${gridClass} gap-4 w-[500px] h-[800px]`}>
                 {Array.from({ length: panelCount }).map((_, i) => (
                     <div key={i} className="w-full h-full">
-                        <PartPanel label={labels[i]} />
+                        <PartPanel key={i} label={labels[i]} index={i} />
                     </div>
                 ))}
             </div>

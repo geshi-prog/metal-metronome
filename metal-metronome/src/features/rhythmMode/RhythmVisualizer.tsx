@@ -1,31 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useRhythmContext } from '@/contexts/RhythmContext';
-import { playBeat } from '@/lib/rhythmLogic';
 
 const RhythmVisualizer: React.FC = () => {
-    const { numerator, bpm, noteValue, isPlaying, displayMode } = useRhythmContext();
-    const [currentStep, setCurrentStep] = useState(0);
+    const { numerator, displayMode, currentAccentStep } = useRhythmContext();
 
-    const noteValueFactor =
-        noteValue === 'quarter' ? 1 :
-        noteValue === 'eighth' ? 0.5 :
-        0.75;
-
-    const interval = (60_000 / bpm) * noteValueFactor;
-
-    useEffect(() => {
-        if (!isPlaying) return;
-        const timer = setInterval(() => {
-            setCurrentStep((prev) => {
-                const next = (prev + 1) % numerator;
-                playBeat();
-                return next;
-            });
-        }, interval);
-        return () => clearInterval(timer);
-    }, [bpm, noteValue, isPlaying, numerator]);
-
-    const MAX_WIDTH = 230; // 各パネルの最大幅に合わせて調整（1枚=460px, 2枚=230px）
+    const MAX_WIDTH = 230;
     const MAX_DOT_SIZE = 24;
     const MIN_DOT_SIZE = 6;
 
@@ -33,7 +12,7 @@ const RhythmVisualizer: React.FC = () => {
     const dotSize = Math.max(MIN_DOT_SIZE, spacing * 0.6);
 
     const points = Array.from({ length: numerator }, (_, i) => {
-        const isActive = currentStep === i;
+        const isActive = currentAccentStep === i;
 
         const baseStyle: React.CSSProperties = {
             width: dotSize,
@@ -45,21 +24,24 @@ const RhythmVisualizer: React.FC = () => {
         };
 
         if (displayMode === 'circle') {
-            // パネルサイズが230pxとして計算（PartPanelがw-full h-full で制約される前提）
             const panelSize = 200;
             const margin = 10;
             const radius = (panelSize / 2) - (dotSize / 2) - margin;
 
-            const angle = (360 / numerator) * i;
+            // 🔄 上からスタート（-90度）
+            const angle = (360 / numerator) * i - 90;
             const rad = (angle * Math.PI) / 180;
             const x = radius * Math.cos(rad);
             const y = radius * Math.sin(rad);
+
             return (
                 <div
                     key={i}
                     style={{
                         ...baseStyle,
-                        transform: `translate(${x}px, ${y}px)`
+                        left: '50%',
+                        top: '50%',
+                        transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
                     }}
                 />
             );
@@ -72,8 +54,9 @@ const RhythmVisualizer: React.FC = () => {
                     key={i}
                     style={{
                         ...baseStyle,
-                        transform: `translate(${x}px, -50%)`,
+                        left: `${x}px`,
                         top: '50%',
+                        transform: 'translateY(-50%)',
                     }}
                 />
             );
@@ -97,25 +80,17 @@ const RhythmVisualizer: React.FC = () => {
         return null;
     });
 
-    if (displayMode === 'wave' || displayMode === 'bar') {
-        return (
-            <div className="relative w-full h-full overflow-hidden flex items-center justify-center">
-                <div
-                    className="relative"
-                    style={{
-                        width: `${spacing * numerator}px`,
-                        height: '100%',
-                    }}
-                >
-                    {points}
-                </div>
-            </div>
-        );
-    }
-
     return (
-        <div className="relative w-full h-full flex items-center justify-center">
-            {points}
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+            <div
+                className="relative"
+                style={{
+                    width: displayMode === 'circle' ? '100%' : `${spacing * numerator}px`,
+                    height: '100%',
+                }}
+            >
+                {points}
+            </div>
         </div>
     );
 };

@@ -34,8 +34,12 @@ type RhythmContextType = {
     setIsPlaying: (value: boolean) => void;
     accentLevels: AccentType[];
     setAccentLevels: (levels: AccentType[]) => void;
+    currentStep: number;
+    setCurrentStep: (value: number) => void;
     currentAccentStep: number;
     setCurrentAccentStep: (step: number) => void;
+    muteStates: boolean[];
+    setMuteStates: (states: boolean[]) => void;
 };
 
 const RhythmContext = createContext<RhythmContextType | null>(null);
@@ -56,7 +60,9 @@ export const RhythmProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const [accentLevels, setAccentLevels] = useState<AccentType[]>(
         Array(numerator).fill('normal')
     );
+    const [currentStep, setCurrentStep] = useState(0);
     const [currentAccentStep, setCurrentAccentStep] = useState(0);
+    const [muteStates, setMuteStates] = useState<boolean[]>(Array(4).fill(true));
 
     useEffect(() => {
         setAccentLevels((prev) => {
@@ -83,8 +89,12 @@ export const RhythmProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                 setIsPlaying,
                 accentLevels,
                 setAccentLevels,
+                currentStep,
+                setCurrentStep,
                 currentAccentStep,
                 setCurrentAccentStep,
+                muteStates,
+                setMuteStates,
             }}
         >
             {children}
