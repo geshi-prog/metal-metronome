@@ -6,14 +6,14 @@
 import React from "react";
 import { useRhythmContext } from "@/contexts/RhythmContext";
 
-const ACCENT_LABELS = {
-    accent: "🔴",
-    normal: "🟢",
-    ghost: "🔵",
-    none: "⚫",
-} as const;
+const ACCENT_LABELS: Record<AccentType, string> = {
+    strong: '強',
+    normal: '中',
+    weak: '弱',
+    none: '無',
+};
 
-const ACCENT_ORDER: (keyof typeof ACCENT_LABELS)[] = ["accent", "normal", "ghost", "none"];
+const ACCENT_ORDER: (keyof typeof ACCENT_LABELS)[] = ['strong', 'normal', 'weak', 'none'];
 
 const TempoAccentSelector: React.FC = () => {
     const { numerator, accentLevels, setAccentLevels, isPlaying, currentAccentStep, } = useRhythmContext();
@@ -40,9 +40,9 @@ const TempoAccentSelector: React.FC = () => {
     const getStyle = (level: AccentType, isActive: boolean) => {
         const base = "w-25 h-25 rounded-full bg-gradient-to-br from-gray-700 to-black border-2 border-gray-400 transition-transform text-white text-xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.5)] hover:scale-125 focus:outline-none focus-visible:outline-white";
         const color =
-            level === 'accent' ? 'bg-red-500 border-red-700' :
+            level === 'strong' ? 'bg-red-500 border-red-700' :
             level === 'normal' ? 'bg-orange-400 border-orange-600' :
-            level === 'ghost' ? 'bg-gray-400 border-gray-500' :
+            level === 'weak' ? 'bg-gray-400 border-gray-500' :
             'bg-black border-gray-600';
 
         const pulse = isActive && isPlaying ? 'animate-pulse ring-2 ring-yellow-300' : '';

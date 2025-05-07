@@ -17,7 +17,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type NoteValue = 'quarter' | 'eighth' | 'dotted-eighth';
 type DisplayMode = 'circle' | 'bar' | 'wave';
-type AccentType = 'accent' | 'normal' | 'ghost' | 'none';
+type AccentType = 'strong' | 'normal' | 'weak' | 'none';
 
 type RhythmContextType = {
     numerator: number;

@@ -14,12 +14,16 @@ import React, { useEffect } from 'react';
 import TempoControl from '@/components/tempo/TempoControl';
 import PartPanelGrid from '@/features/rhythmMode/PartPanelGrid';
 import PlaybackControls from '@/components/playback/PlaybackControls';
+import usePlaybackLoop from '@/components/playback/PlaybackLoop';
 //import ModeSwitch from '@/components/control/ModeSwitch';
 
 import { useRhythmContext } from '@/contexts/RhythmContext';
 import { playTempoClick, loadSamples } from '@/lib/rhythmLogic';
 
 const RhythmModePage: React.FC = () => {
+
+    usePlaybackLoop();
+
     const {
         isPlaying,
         bpm,
@@ -40,7 +44,6 @@ const RhythmModePage: React.FC = () => {
 
     // 再生中：テンポに応じてアクセントの音とステップ更新
     useEffect(() => {
-        loadSamples();
         if (!isPlaying) return;
 
         const timer = setInterval(() => {

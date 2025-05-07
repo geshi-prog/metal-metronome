@@ -16,11 +16,10 @@ import * as Tone from 'tone';
 
 let tempoLoopId: NodeJS.Timeout | null = null;
 
-// シンセを定義（基本は1音だけ鳴らす）
-const synth = new Tone.Synth().toDestination();
-const accentSynth = new Tone.MembraneSynth().toDestination(); // アクセント
-const normalSynth = new Tone.MembraneSynth().toDestination(); // 通常
-const ghostSynth = new Tone.MembraneSynth().toDestination(); // ゴーストノート
+// サウンドを定義
+const clickHighPlayer = new Tone.Player('/sounds/click_high.wav').toDestination();
+const clickPlayer = new Tone.Player('/sounds/click.wav').toDestination();
+const clickLowPlayer = new Tone.Player('/sounds/click_low.wav').toDestination();
 const kickPlayer = new Tone.Player('/sounds/kick.wav').toDestination();
 
 export const loadSamples = async () => {
@@ -35,20 +34,27 @@ export const playKick = () => {
  * 1音だけ鳴らす
  */
 export const playBeat = async () => {
-    await Tone.start();
-    kickPlayer.start();
+    //await Tone.start();
+    //kickPlayer.start();
 };
 
-export const playTempoClick = (accent: "accent" | "normal" | "ghost" | "none") => {
+export const playTempoClick = async (accent: 'strong' | 'normal' | 'weak' | 'none') => {
+    await Tone.start();
+
+    // 既に再生中だったら止めてから再生（重複を防ぐ）
+    clickHighPlayer.stop();
+    clickPlayer.stop();
+    clickLowPlayer.stop();
+
     switch (accent) {
-        case "accent":
-            accentSynth.triggerAttackRelease("C4", "16n", Tone.now() + 0.000001, 1); // 大きく
+        case 'strong':
+            clickHighPlayer.start();
             break;
         case "normal":
-            normalSynth.triggerAttackRelease("C4", "16n", Tone.now() + 0.000001, 0.6);
+            clickPlayer.start();
             break;
-        case "ghost":
-            ghostSynth.triggerAttackRelease("C4", "16n", Tone.now() + 0.000001, 0.3);
+        case 'weak':
+            clickLowPlayer.start();
             break;
         case "none":
             // 無音：なにもしない
@@ -59,7 +65,7 @@ export const playTempoClick = (accent: "accent" | "normal" | "ghost" | "none") =
 export const startTempoLoop = (
     bpm: number,
     noteValue: "quarter" | "eighth" | "dotted-eighth",
-    accents: ("accent" | "normal" | "ghost" | "none")[],
+    accents: ('strong' | 'normal' | 'weak' | 'none')[],
     setCurrentAccentStep: (step: number) => void
 ) => {
     const noteFactor = noteValue === "quarter" ? 1 : noteValue === "eighth" ? 0.5 : 0.75;
