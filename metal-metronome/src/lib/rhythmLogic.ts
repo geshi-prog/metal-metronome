@@ -34,8 +34,8 @@ export const playKick = () => {
  * 1音だけ鳴らす
  */
 export const playBeat = async () => {
-    //await Tone.start();
-    //kickPlayer.start();
+    await Tone.start();
+    kickPlayer.start();
 };
 
 export const playTempoClick = async (accent: 'strong' | 'normal' | 'weak' | 'none') => {

@@ -42,3 +42,5 @@ export const usePlaybackLoop = () => {
         };
     }, [isPlaying, bpm, noteValue, accentLevels, numerator]);
 };
+
+export default usePlaybackLoop;
