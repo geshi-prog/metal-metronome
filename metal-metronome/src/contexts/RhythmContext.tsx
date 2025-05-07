@@ -18,6 +18,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 type NoteValue = 'quarter' | 'eighth' | 'dotted-eighth';
 type DisplayMode = 'circle' | 'bar' | 'wave';
 type AccentType = 'strong' | 'normal' | 'weak' | 'none';
+type RhythmUnit = { n: number; m: number };
 
 type RhythmContextType = {
     numerator: number;
@@ -40,6 +41,10 @@ type RhythmContextType = {
     setCurrentAccentStep: (step: number) => void;
     muteStates: boolean[];
     setMuteStates: (states: boolean[]) => void;
+    rhythmUnits: { n: number; m: number }[];
+    setRhythmUnits: (units: { n: number; m: number }[]) => void;
+    currentRhythmSteps: number[];
+    setCurrentRhythmSteps: (steps: number[]) => void;
 };
 
 const RhythmContext = createContext<RhythmContextType | null>(null);
@@ -57,12 +62,12 @@ export const RhythmProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const [displayMode, setDisplayMode] = useState<DisplayMode>('circle');
     const [bpm, setBpm] = useState(120);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [accentLevels, setAccentLevels] = useState<AccentType[]>(
-        Array(numerator).fill('normal')
-    );
+    const [accentLevels, setAccentLevels] = useState<AccentType[]>(Array(numerator).fill('normal'));
     const [currentStep, setCurrentStep] = useState(0);
     const [currentAccentStep, setCurrentAccentStep] = useState(0);
     const [muteStates, setMuteStates] = useState<boolean[]>(Array(4).fill(true));
+    const [rhythmUnits, setRhythmUnits] = useState<RhythmUnit[]>(Array(4).fill({ n: 2, m: 3 }));
+    const [currentRhythmSteps, setCurrentRhythmSteps] = useState<number[]>(Array(4).fill(0));
 
     useEffect(() => {
         setAccentLevels((prev) => {
@@ -71,6 +76,14 @@ export const RhythmProvider: React.FC<{ children: React.ReactNode }> = ({ childr
             return updated.slice(0, numerator);
         });
     }, [numerator]);
+
+    useEffect(() => {
+        setRhythmUnits((prev) => {
+            const updated = [...prev];
+            while (updated.length < 4) updated.push({ n: 1, m: 1 });
+            return updated.slice(0, 4);
+        });
+    }, []);
 
     return (
         <RhythmContext.Provider
@@ -95,6 +108,10 @@ export const RhythmProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                 setCurrentAccentStep,
                 muteStates,
                 setMuteStates,
+                rhythmUnits,
+                setRhythmUnits,
+                currentRhythmSteps,
+                setCurrentRhythmSteps,
             }}
         >
             {children}

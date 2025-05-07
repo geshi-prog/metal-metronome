@@ -14,9 +14,8 @@
 
 import * as Tone from 'tone';
 
-let tempoLoopId: NodeJS.Timeout | null = null;
+let rhythmEvents: number[] = [];
 
-// サウンドを定義
 const clickHighPlayer = new Tone.Player('/sounds/click_high.wav').toDestination();
 const clickPlayer = new Tone.Player('/sounds/click.wav').toDestination();
 const clickLowPlayer = new Tone.Player('/sounds/click_low.wav').toDestination();
@@ -26,9 +25,6 @@ export const loadSamples = async () => {
     await Tone.loaded();
 };
 
-/**
- * 1音だけ鳴らす
- */
 export const playBeat = (index: number, isMuted: boolean, time?: number) => {
     if (!isMuted) {
         kickPlayer.start(time);
@@ -36,67 +32,122 @@ export const playBeat = (index: number, isMuted: boolean, time?: number) => {
 };
 
 export const playTempoClick = (accent: 'strong' | 'normal' | 'weak' | 'none', time?: number) => {
-
     switch (accent) {
-        case 'strong':
-            clickHighPlayer.start(time);
-            break;
-        case "normal":
-            clickPlayer.start(time);
-            break;
-        case 'weak':
-            clickLowPlayer.start(time);
-            break;
-        case "none":
-            // 無音：なにもしない
-            break;
+        case 'strong': clickHighPlayer.start(time); break;
+        case 'normal': clickPlayer.start(time); break;
+        case 'weak': clickLowPlayer.start(time); break;
+        case 'none': break;
     }
 };
 
+const getNoteSymbol = (val: "quarter" | "eighth" | "dotted-eighth") => {
+    switch (val) {
+        case 'quarter': return '4n';
+        case 'eighth': return '8n';
+        case 'dotted-eighth': return '8t';
+        default: return '4n';
+    }
+};
+
+/**
+ * テンポ（拍）のループ処理
+ */
 export const startTempoLoop = (
+    bpm: number,
+    noteValue: "quarter" | "eighth" | "dotted-eighth",
+    accents: ('strong' | 'normal' | 'weak' | 'none')[],
+    setCurrentAccentStep: (step: number) => void,
+    numerator: number
+) => {
+    Tone.Transport.cancel();
+    Tone.Transport.bpm.value = bpm;
+    Tone.Transport.loop = true;
+    Tone.Transport.loopEnd = getNoteSymbol(noteValue); // 1拍ずつ繰り返す
+
+    let step = numerator - 1;
+
+    const noteSymbol = getNoteSymbol(noteValue);
+
+    const tempoEvent = Tone.Transport.scheduleRepeat((time) => {
+        Tone.Draw.schedule(() => {
+            setCurrentAccentStep(step);
+        }, time);
+        playTempoClick(accents[step], time);
+        step = (step + 1) % numerator;
+    }, noteSymbol);
+
+    rhythmEvents.push(tempoEvent);
+};
+
+/**
+ * リズム音のループ（m連符など）
+ */
+export const startRhythmLoop = (
+    bpm: number,
+    rhythmUnits: { n: number; m: number }[],
+    muteStates: boolean[],
+    partCount: number,
+    numerator: number,
+    noteValue: "quarter" | "eighth" | "dotted-eighth",
+    setCurrentRhythmSteps: (steps: number[]) => void
+) => {
+    const secondsPerBeat = 60 / bpm;
+    const loopDuration = secondsPerBeat * numerator;
+
+    const loopEvent = Tone.Transport.scheduleRepeat((loopStartTime) => {
+        for (let partIndex = 0; partIndex < partCount; partIndex++) {
+            const { n, m } = rhythmUnits[partIndex];
+            const total = secondsPerBeat * n;
+            const interval = total / m;
+
+            // loopDurationにnが何回入るかを求める
+            const repetitions = Math.floor(loopDuration / total);
+
+            for (let r = 0; r < repetitions; r++) {
+                const offsetBase = r * total;
+                for (let i = 0; i < m; i++) {
+                    const offset = offsetBase + i * interval;
+                    const scheduledTime = loopStartTime + offset;
+                    playBeat(partIndex, muteStates[partIndex], scheduledTime);
+                }
+            }
+        }
+    }, loopDuration);
+
+    rhythmEvents.push(loopEvent);
+
+    Tone.Transport.loop = true;
+    Tone.Transport.loopStart = 0;
+    Tone.Transport.loopEnd = loopDuration;
+};
+
+/**
+ * 再生開始
+ */
+export const startAllLoops = (
     bpm: number,
     noteValue: "quarter" | "eighth" | "dotted-eighth",
     accents: ('strong' | 'normal' | 'weak' | 'none')[],
     setCurrentAccentStep: (step: number) => void,
     muteStates: boolean[],
     partCount: number,
-    numerator: number
+    numerator: number,
+    rhythmUnits: { n: number; m: number }[],
+    setCurrentRhythmSteps: (steps: number[]) => void
 ) => {
-    const getNoteSymbol = (val: typeof noteValue) => {
-        switch (val) {
-            case 'quarter': return '4n';
-            case 'eighth': return '8n';
-            case 'dotted-eighth': return '8t';
-            default: return '4n';
-        }
-    };
-
-    Tone.Transport.cancel(); // 以前のスケジュールをクリア
-    Tone.Transport.bpm.value = bpm;
-
-    let step = numerator -1 ;
-
-    const noteSymbol = getNoteSymbol(noteValue);
-
-    tempoLoopId = Tone.Transport.scheduleRepeat((time) => {
-        Tone.Draw.schedule(() => {
-            setCurrentAccentStep(step);
-            playTempoClick(accents[step], time);
-            for (let partIndex = 0; partIndex < partCount; partIndex++) {
-                playBeat(step, muteStates[partIndex], time);
-            }
-        }, time);
-
-        step = (step + 1) % numerator;
-    }, noteSymbol);
-
+    startTempoLoop(bpm, noteValue, accents, setCurrentAccentStep, numerator);
+    startRhythmLoop(bpm, rhythmUnits, muteStates, partCount, numerator, noteValue, setCurrentRhythmSteps);
     Tone.Transport.start();
 };
 
-export const stopTempoLoop = () => {
-    if (tempoLoopId !== null) {
-        Tone.Transport.clear(tempoLoopId);
-        tempoLoopId = null;
+/**
+ * 停止とイベント解除
+ */
+export const stopAllLoops = () => {
+    for (const id of rhythmEvents) {
+        Tone.Transport.clear(id);
     }
+    rhythmEvents = [];
+
     Tone.Transport.stop();
 };

@@ -14,23 +14,34 @@
 import React from 'react';
 import { useRhythmContext } from '@/contexts/RhythmContext';
 import * as Tone from 'tone';
-import { startTempoLoop, stopTempoLoop } from '@/lib/rhythmLogic';
+import { startAllLoops, stopAllLoops } from '@/lib/rhythmLogic';
 
 const PlaybackControls: React.FC = () => {
     const {
         isPlaying, setIsPlaying,
         bpm, noteValue, accentLevels,
-        setCurrentAccentStep, muteStates, numerator
+        setCurrentAccentStep, muteStates,
+        numerator, rhythmUnits, setCurrentRhythmSteps
     } = useRhythmContext();
 
     const handleToggle = async () => {
         await Tone.start(); // AudioContext 再開
 
         if (!isPlaying) {
-            startTempoLoop(bpm, noteValue, accentLevels, setCurrentAccentStep, muteStates, 4, numerator);
+            startAllLoops(
+                bpm,
+                noteValue,
+                accentLevels,
+                setCurrentAccentStep,
+                muteStates,
+                4, // partCount（今は固定）
+                numerator,
+                rhythmUnits,
+                setCurrentRhythmSteps
+            );
         } else {
-            stopTempoLoop();
-            setCurrentAccentStep(0); // 初期化
+            stopAllLoops();
+            setCurrentAccentStep(0);
         }
 
         setIsPlaying(!isPlaying);
