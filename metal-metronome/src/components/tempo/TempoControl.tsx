@@ -32,9 +32,27 @@ const TempoControl = () => {
         setBpm(prev => Math.min(300, Math.max(30, prev + amount)));
     };
 
+    const tapTimes = useRef<number[]>([]);
+
     const handleTap = () => {
-        // 今後：TAPテンポを実装予定
-        alert('TAPテンポ機能はまだ実装されていません。');
+        const now = Date.now();
+        const times = tapTimes.current;
+        if (times.length > 0 && now - times[times.length - 1] > 3000) {
+            times.length = 0;
+        }
+        times.push(now);
+        if (times.length >= 2) {
+            const intervals = times.slice(1).map((t, i) => t - times[i]);
+            const avgInterval = intervals.reduce((a, b) => a + b) / intervals.length;
+            const newBpm = Math.round(60000 / avgInterval);
+
+            if (newBpm >= 30 && newBpm <= 300) {
+                setBpm(newBpm);
+            }
+        }
+        if (times.length > 4) {
+            times.shift();
+        }
     };
 
     const handlePressStart = (action: () => void) => {
@@ -91,7 +109,6 @@ const TempoControl = () => {
                 >
                     <option value="quarter">♩</option>
                     <option value="eighth">♪</option>
-                    <option value="dotted-eighth">♪.</option>
                 </select>
             </div>
 

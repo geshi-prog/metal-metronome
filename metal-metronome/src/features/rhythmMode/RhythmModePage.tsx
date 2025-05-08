@@ -11,12 +11,17 @@
  * - モード切替時のアニメーション演出
  */
 import React, { useEffect, useRef } from 'react';
+import { loadSamples } from '@/lib/rhythmLogic';
 import TempoControl from '@/components/tempo/TempoControl';
 import PartPanelGrid from '@/features/rhythmMode/PartPanelGrid';
 import PlaybackControls from '@/components/playback/PlaybackControls';
 //import ModeSwitch from '@/components/control/ModeSwitch';
 
 const RhythmModePage: React.FC = () => {
+    useEffect(() => {
+        loadSamples(4);
+    }, []);
+
     return (
         <div className="flex flex-col gap-8 p-6 bg-black text-white min-h-screen items-center">
             {/* 🎼 テンポ設定 */}

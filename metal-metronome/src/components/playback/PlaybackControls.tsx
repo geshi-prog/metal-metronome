@@ -21,7 +21,8 @@ const PlaybackControls: React.FC = () => {
         isPlaying, setIsPlaying,
         bpm, noteValue, accentLevels,
         setCurrentAccentStep, muteStates,
-        numerator, rhythmUnits, setCurrentRhythmSteps
+        numerator, rhythmUnits, setCurrentRhythmSteps, rhythmVolumes,
+        denominator, partSounds,
     } = useRhythmContext();
 
     const handleToggle = async () => {
@@ -37,7 +38,10 @@ const PlaybackControls: React.FC = () => {
                 4, // partCount（今は固定）
                 numerator,
                 rhythmUnits,
-                setCurrentRhythmSteps
+                setCurrentRhythmSteps,
+                rhythmVolumes,
+                denominator,
+                partSounds
             );
         } else {
             stopAllLoops();

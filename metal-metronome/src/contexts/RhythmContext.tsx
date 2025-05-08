@@ -16,9 +16,10 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type NoteValue = 'quarter' | 'eighth' | 'dotted-eighth';
-type DisplayMode = 'circle' | 'bar' | 'wave';
+type DisplayMode = 'circle' | 'bar' | 'wave' | 'rotary';
 type AccentType = 'strong' | 'normal' | 'weak' | 'none';
 type RhythmUnit = { n: number; m: number };
+type RhythmVolumeMatrix = number[][];
 
 type RhythmContextType = {
     numerator: number;
@@ -45,6 +46,10 @@ type RhythmContextType = {
     setRhythmUnits: (units: { n: number; m: number }[]) => void;
     currentRhythmSteps: number[];
     setCurrentRhythmSteps: (steps: number[]) => void;
+    rhythmVolumes: RhythmVolumeMatrix;
+    setRhythmVolumes: (volumes: RhythmVolumeMatrix) => void;
+    partSounds: string[];
+    setPartSounds: (sounds: string[]) => void;
 };
 
 const RhythmContext = createContext<RhythmContextType | null>(null);
@@ -66,8 +71,10 @@ export const RhythmProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const [currentStep, setCurrentStep] = useState(0);
     const [currentAccentStep, setCurrentAccentStep] = useState(0);
     const [muteStates, setMuteStates] = useState<boolean[]>(Array(4).fill(true));
-    const [rhythmUnits, setRhythmUnits] = useState<RhythmUnit[]>(Array(4).fill({ n: 5, m: 3 }));
+    const [rhythmUnits, setRhythmUnits] = useState<RhythmUnit[]>(Array(4).fill({ n: 1, m: 1 }));
     const [currentRhythmSteps, setCurrentRhythmSteps] = useState<number[]>(Array(4).fill(0));
+    const [rhythmVolumes, setRhythmVolumes] = useState<RhythmVolumeMatrix>(Array(4).fill(null).map(() => Array(16).fill(1.0)));
+    const [partSounds, setPartSounds] = useState<string[]>(Array(4).fill('kick'));
 
     useEffect(() => {
         setAccentLevels((prev) => {
@@ -112,6 +119,10 @@ export const RhythmProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                 setRhythmUnits,
                 currentRhythmSteps,
                 setCurrentRhythmSteps,
+                rhythmVolumes,
+                setRhythmVolumes,
+                partSounds,
+                setPartSounds,
             }}
         >
             {children}
