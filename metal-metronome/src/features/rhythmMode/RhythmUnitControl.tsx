@@ -31,7 +31,7 @@ const RhythmUnitControl: React.FC<Props> = ({ partIndex }) => {
             <input
                 type="number"
                 min={1}
-                max={16}
+                max={32}
                 value={unit.m}
                 onChange={(e) => handleChange('m', parseInt(e.target.value))}
                 disabled={isPlaying}

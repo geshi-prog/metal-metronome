@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { useAppContext } from '@/contexts/AppContext';
 import RhythmModePage from '@/features/rhythmMode/RhythmModePage';
+import TrainingModePage from '@/features/trainingMode/TrainingModePage';
 import { RhythmProvider } from '@/contexts/RhythmContext';
+import { TrainingProvider } from '@/contexts/TrainingContext';
 
 const App: React.FC = () => {
+  const { mode } = useAppContext();
   return (
     <RhythmProvider>
-      <RhythmModePage />
+      <TrainingProvider>
+        {mode === 'rhythm' ? <RhythmModePage /> : <TrainingModePage />}
+      </TrainingProvider>
     </RhythmProvider>
   );
 };

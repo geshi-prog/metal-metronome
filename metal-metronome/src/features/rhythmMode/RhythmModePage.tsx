@@ -15,7 +15,7 @@ import { loadSamples } from '@/lib/rhythmLogic';
 import TempoControl from '@/components/tempo/TempoControl';
 import PartPanelGrid from '@/features/rhythmMode/PartPanelGrid';
 import PlaybackControls from '@/components/playback/PlaybackControls';
-//import ModeSwitch from '@/components/control/ModeSwitch';
+import ModeSwitch from '@/components/control/ModeSwitch';
 
 const RhythmModePage: React.FC = () => {
     useEffect(() => {
@@ -33,8 +33,8 @@ const RhythmModePage: React.FC = () => {
             {/* ▶️ 再生・停止ボタン */}
             <PlaybackControls />
 
-            {/* 🔁 モード切替（仮） */}
-            {/* <ModeSwitch /> */}
+            {/* 🔁 モード切替 */}
+            <ModeSwitch />
         </div>
     );
 };
