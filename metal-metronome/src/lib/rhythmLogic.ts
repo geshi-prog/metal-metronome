@@ -18,12 +18,12 @@ let rhythmEvents: number[] = [];
 let rhythmParts: Tone.Part[] = [];
 let tempoPart: Tone.Part | null = null;
 
-const clickHighPlayer = new Tone.Player('/sounds/click_high.wav').toDestination();
-const clickPlayer = new Tone.Player('/sounds/click.wav').toDestination();
-const clickLowPlayer = new Tone.Player('/sounds/click_low.wav').toDestination();
+const clickHighPlayer = new Tone.Player('sounds/click_high.wav').toDestination();
+const clickPlayer = new Tone.Player('sounds/click.wav').toDestination();
+const clickLowPlayer = new Tone.Player('sounds/click_low.wav').toDestination();
 const SOUND_FILES: { [key: string]: string } = {
-    kick: '/sounds/kick.wav',
-    snare: '/sounds/snare.wav',
+    kick: 'sounds/kick.wav',
+    snare: 'sounds/snare.wav',
     // 追加したい音があればここに追加
 };
 
