@@ -94,6 +94,15 @@ const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
                 {/* スライダー & プリセット */}
                 {selectedStep !== null && (
                     <div className="flex flex-col items-center gap-2 mt-2">
+                        <select
+                            value={selectedStep}
+                            onChange={(e) => setSelectedStep(parseInt(e.target.value))}
+                            className="mb-1 px-2 py-1 bg-gray-800 text-white rounded border border-gray-500"
+                        >
+                            {Array.from({ length: m }, (_, i) => (
+                                <option key={i} value={i}>Step {i + 1}</option>
+                            ))}
+                        </select>
                         <input
                             type="range"
                             min={0}
@@ -222,6 +231,16 @@ const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
             </div>
             {selectedStep !== null && (
                 <div className="flex flex-col items-center gap-2 mt-2">
+                    
+                    <select
+                        value={selectedStep}
+                        onChange={(e) => setSelectedStep(parseInt(e.target.value))}
+                        className="mb-1 px-2 py-1 bg-gray-800 text-white rounded border border-gray-500"
+                    >
+                        {Array.from({ length: m }, (_, i) => (
+                            <option key={i} value={i}>Step {i + 1}</option>
+                        ))}
+                    </select>
                     <input
                         type="range"
                         min={0}

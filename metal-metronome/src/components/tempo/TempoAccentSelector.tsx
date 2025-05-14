@@ -68,7 +68,7 @@ const TempoAccentSelector: React.FC = () => {
                                 className={getStyle(level, currentAccentStep === index)}
                                 title={`拍 ${index + 1}：${level}`}
                             >
-                                {`拍 ${index + 1}：`}<br />{`${level}`}<br />{ACCENT_LABELS[level]}
+                                {`拍 ${index + 1}`}<br />{ACCENT_LABELS[level]}
                             </button>
                         );
                     })}

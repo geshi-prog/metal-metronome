@@ -43,6 +43,8 @@ const PartPanel: React.FC<Props> = ({ label, index: partIndex }) => {
             {/* Rhythm 設定 */}
             <div className="mt-4 flex flex-row items-center gap-2">
                 <RhythmUnitControl partIndex={partIndex} />
+            </div>
+            <div className="mt-4 flex flex-row items-center gap-2">
                 <select
                     value={partSounds[partIndex]}
                     onChange={(e) => {
@@ -53,7 +55,29 @@ const PartPanel: React.FC<Props> = ({ label, index: partIndex }) => {
                     className="bg-gray-700 text-white rounded px-2 py-1 border border-gray-500 mb-2"
                 >
                     <option value="kick">Kick</option>
+                    <option value="kick_sub">Kick Sub</option>
                     <option value="snare">Snare</option>
+                    <option value="snare_ghost">Snare Ghost</option>
+                    <option value="snare_rim">Snare Rim</option>
+                    <option value="tom_high1">Tom High 1</option>
+                    <option value="tom_high2">Tom High 2</option>
+                    <option value="tom_mid1">Tom Mid 1</option>
+                    <option value="tom_mid2">Tom Mid 2</option>
+                    <option value="tom_low1">Tom Low 1</option>
+                    <option value="tom_low2">Tom Low 2</option>
+                    <option value="hihat_closed">Hi-Hat Closed</option>
+                    <option value="hihat_open">Hi-Hat Open</option>
+                    <option value="hihat_pedal">Hi-Hat Pedal</option>
+                    <option value="crash1">Crash 1</option>
+                    <option value="crash2">Crash 2</option>
+                    <option value="ride_bell">Ride Bell</option>
+                    <option value="ride_crash">Ride Crash</option>
+                    <option value="ride_tip">Ride Tip</option>
+                    <option value="china">China</option>
+                    <option value="splash">Splash</option>
+                    <option value="bell">Bell</option>
+                    <option value="click">Click</option>
+                    <option value="click_high">Click High</option>
                 </select>
             </div>
 

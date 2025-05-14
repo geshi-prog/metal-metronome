@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import PartPanel from './PartPanel';
+import TempoPanel from './TempoPanel';
 
 const labels = ['右手', '左手', '右足', '左足'];
 
@@ -28,6 +29,12 @@ const PartPanelGrid: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center gap-4">
+            {/* テンポ用パネル（固定） */}
+            <div className={`grid grid-cols-1 grid-rows-1 gap-4 w-[500px] h-[200px]`}>
+                <div className="w-full h-full">
+                    <TempoPanel />
+                </div>
+            </div>
             {/* パネル増減ボタン */}
             <div className="flex gap-4">
                 <button
@@ -53,7 +60,7 @@ const PartPanelGrid: React.FC = () => {
             </div>
 
             {/* パネル表示部分（幅・高さ固定、内部で調整） */}
-            <div className={`grid ${gridClass} gap-4 w-[500px] h-[800px]`}>
+            <div className={`grid ${gridClass} gap-4 w-[500px] h-[1000px]`}>
                 {Array.from({ length: panelCount }).map((_, i) => (
                     <div key={i} className="w-full h-full">
                         <PartPanel key={i} label={labels[i]} index={i} />

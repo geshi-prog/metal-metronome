@@ -54,6 +54,8 @@ type RhythmContextType = {
 
 const RhythmContext = createContext<RhythmContextType | null>(null);
 
+export const TEMPO_PANEL_INDEX = -1;
+
 export const useRhythmContext = () => {
     const ctx = useContext(RhythmContext);
     if (!ctx) throw new Error('RhythmContext must be used within RhythmProvider');
