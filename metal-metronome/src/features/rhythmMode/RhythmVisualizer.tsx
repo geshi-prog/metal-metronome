@@ -12,6 +12,7 @@ const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
         displayMode,
         rhythmVolumes,
         setRhythmVolumes,
+        isPlaying,
     } = useRhythmContext();
 
     const { m } = rhythmUnits[partIndex];
@@ -76,7 +77,7 @@ const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
                                 cy={y}
                                 r={MAX_DOT_SIZE / 2}
                                 fill={fillColor}
-                                onClick={() => setSelectedStep(i === selectedStep ? null : i)}
+                                onClick={isPlaying ? undefined : () => setSelectedStep(i === selectedStep ? null : i)}
                                 style={{ cursor: 'pointer' }}
                             />
                         );
@@ -179,7 +180,7 @@ const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
                         top: '50%',
                         transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
                     }}
-                    onClick={handleClick}
+                    onClick={isPlaying ? undefined : () => setSelectedStep(i === selectedStep ? null : i)}
                 />
             );
         }
@@ -195,14 +196,14 @@ const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
                         top: '50%',
                         transform: 'translateY(-50%)',
                     }}
-                    onClick={handleClick}
+                    onClick={isPlaying ? undefined : () => setSelectedStep(i === selectedStep ? null : i)}
                 />
             );
         }
 
         if (displayMode === 'wave') {
             const x = i * spacing;
-            const y = 20 * Math.sin((i / m) * 2 * Math.PI);
+            const y = 15 * Math.sin((i / m) * 2 * Math.PI);
             return (
                 <div
                     key={i}
@@ -211,7 +212,7 @@ const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
                         left: `${x}px`,
                         top: `calc(50% + ${y}px)`,
                     }}
-                    onClick={handleClick}
+                    onClick={isPlaying ? undefined : () => setSelectedStep(i === selectedStep ? null : i)}
                 />
             );
         }
@@ -229,47 +230,46 @@ const RhythmVisualizer: React.FC<Props> = ({ partIndex }) => {
             >
                 {points}
             </div>
-            {selectedStep !== null && (
-                <div className="flex flex-col items-center gap-2 mt-2">
-                    
-                    <select
-                        value={selectedStep}
-                        onChange={(e) => setSelectedStep(parseInt(e.target.value))}
-                        className="mb-1 px-2 py-1 bg-gray-800 text-white rounded border border-gray-500"
-                    >
-                        {Array.from({ length: m }, (_, i) => (
-                            <option key={i} value={i}>Step {i + 1}</option>
-                        ))}
-                    </select>
-                    <input
-                        type="range"
-                        min={0}
-                        max={1}
-                        step={0.01}
-                        value={rhythmVolumes[partIndex][selectedStep]}
-                        onChange={handleVolumeChange}
-                        className="w-32 accent-blue-400"
-                    />
-                    <select
-                        value=""
-                        onChange={(e) => {
-                            const value = parseFloat(e.target.value);
-                            if (selectedStep === null) return;
-                            const updated = [...rhythmVolumes];
-                            updated[partIndex] = [...updated[partIndex]];
-                            updated[partIndex][selectedStep] = value;
-                            setRhythmVolumes(updated);
-                        }}
-                        className="mt-2 px-2 py-1 bg-gray-800 text-white rounded border border-gray-500"
-                    >
-                        <option value="" disabled>プリセット</option>
-                        <option value={1.0}>f</option>
-                        <option value={0.75}>mf</option>
-                        <option value={0.5}>p</option>
-                        <option value={0.25}>pp</option>
-                        <option value={0}>×</option>
-                    </select>
-                </div>
+            {!isPlaying && selectedStep !== null && (
+              <div className="flex flex-col items-center gap-2 mt-2">
+                <select
+                  value={selectedStep}
+                  onChange={(e) => setSelectedStep(parseInt(e.target.value))}
+                  className="mb-1 px-2 py-1 bg-gray-800 text-white rounded border border-gray-500"
+                >
+                  {Array.from({ length: m }, (_, i) => (
+                    <option key={i} value={i}>Step {i + 1}</option>
+                  ))}
+                </select>
+                <input
+                  type="range"
+                  min={0}
+                  max={1}
+                  step={0.01}
+                  value={rhythmVolumes[partIndex][selectedStep]}
+                  onChange={handleVolumeChange}
+                  className="w-32 accent-blue-400"
+                />
+                <select
+                  value=""
+                  onChange={(e) => {
+                    const value = parseFloat(e.target.value);
+                    if (selectedStep === null) return;
+                    const updated = [...rhythmVolumes];
+                    updated[partIndex] = [...updated[partIndex]];
+                    updated[partIndex][selectedStep] = value;
+                    setRhythmVolumes(updated);
+                  }}
+                  className="mt-2 px-2 py-1 bg-gray-800 text-white rounded border border-gray-500"
+                >
+                  <option value="" disabled>プリセット</option>
+                  <option value={1.0}>f</option>
+                  <option value={0.75}>mf</option>
+                  <option value={0.5}>p</option>
+                  <option value={0.25}>pp</option>
+                  <option value={0}>×</option>
+                </select>
+              </div>
             )}
         </div>
     );

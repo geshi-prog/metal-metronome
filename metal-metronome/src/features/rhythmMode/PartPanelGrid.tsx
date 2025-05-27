@@ -6,11 +6,13 @@
 import React, { useState } from 'react';
 import PartPanel from './PartPanel';
 import TempoPanel from './TempoPanel';
+import { useRhythmContext } from '@/contexts/RhythmContext';
 
 const labels = ['右手', '左手', '右足', '左足'];
 
 const PartPanelGrid: React.FC = () => {
     const [panelCount, setPanelCount] = useState(1);
+    const { isPlaying } = useRhythmContext();
 
     const addPanel = () => {
         if (panelCount < 4) setPanelCount(panelCount + 1);
@@ -28,39 +30,41 @@ const PartPanelGrid: React.FC = () => {
             : 'grid-cols-2 grid-rows-2';
 
     return (
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-15">
             {/* テンポ用パネル（固定） */}
             <div className={`grid grid-cols-1 grid-rows-1 gap-4 w-[500px] h-[200px]`}>
                 <div className="w-full h-full">
                     <TempoPanel />
                 </div>
             </div>
-            {/* パネル増減ボタン */}
-            <div className="flex gap-4">
-                <button
-                    onClick={removePanel}
-                    disabled={panelCount <= 1}
-                    className={`w-10 h-10 rounded-full text-white text-xl flex items-center justify-center 
-                        transition duration-200 focus:outline-none 
-                        border-2 border-gray-400 bg-gradient-to-br from-gray-700 to-black
-                        ${panelCount <= 1 ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'}`}
-                >
-                    −
-                </button>
-                <button
-                    onClick={addPanel}
-                    disabled={panelCount >= 4}
-                    className={`w-10 h-10 rounded-full text-white text-xl flex items-center justify-center 
-                        transition duration-200 focus:outline-none 
-                        border-2 border-gray-400 bg-gradient-to-br from-gray-700 to-black
-                        ${panelCount >= 4 ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'}`}
-                >
-                    ＋
-                </button>
-            </div>
 
+            {/* パネル増減ボタン */}
+            {!isPlaying && (
+                <div className="flex gap-4">
+                    <button
+                        onClick={removePanel}
+                        disabled={panelCount <= 1}
+                        className={`w-10 h-10 rounded-full text-white text-xl flex items-center justify-center 
+                            transition duration-200 focus:outline-none 
+                            border-2 border-gray-400 bg-gradient-to-br from-gray-700 to-black
+                            ${panelCount <= 1 ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'}`}
+                    >
+                        −
+                    </button>
+                    <button
+                        onClick={addPanel}
+                        disabled={panelCount >= 4}
+                        className={`w-10 h-10 rounded-full text-white text-xl flex items-center justify-center 
+                            transition duration-200 focus:outline-none 
+                            border-2 border-gray-400 bg-gradient-to-br from-gray-700 to-black
+                            ${panelCount >= 4 ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'}`}
+                    >
+                        ＋
+                    </button>
+                </div>
+            )}
             {/* パネル表示部分（幅・高さ固定、内部で調整） */}
-            <div className={`grid ${gridClass} gap-4 w-[500px] h-[1000px]`}>
+            <div className={`grid ${gridClass} w-[500px] ${isPlaying ? 'h-auto' : 'h-[1000px]'}`}>
                 {Array.from({ length: panelCount }).map((_, i) => (
                     <div key={i} className="w-full h-full">
                         <PartPanel key={i} label={labels[i]} index={i} />

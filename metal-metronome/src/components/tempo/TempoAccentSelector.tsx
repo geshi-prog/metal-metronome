@@ -67,6 +67,7 @@ const TempoAccentSelector: React.FC = () => {
                                 onClick={() => toggleAccent(index)}
                                 className={getStyle(level, currentAccentStep === index)}
                                 title={`拍 ${index + 1}：${level}`}
+                                disabled={isPlaying}
                             >
                                 {`拍 ${index + 1}`}<br />{ACCENT_LABELS[level]}
                             </button>

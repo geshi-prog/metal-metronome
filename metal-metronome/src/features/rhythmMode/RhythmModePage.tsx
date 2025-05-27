@@ -30,9 +30,6 @@ const RhythmModePage: React.FC = () => {
             {/* 🥁 リズムパネル表示（1〜4） */}
             <PartPanelGrid />
 
-            {/* ▶️ 再生・停止ボタン */}
-            <PlaybackControls />
-
             {/* 🔁 モード切替 */}
             <ModeSwitch />
         </div>

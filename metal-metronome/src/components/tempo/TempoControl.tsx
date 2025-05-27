@@ -131,6 +131,7 @@ const TempoControl = () => {
                         hover:border-white 
                         transition duration-200
                         focus:outline-none focus-visible:outline-white"
+                    disabled={isPlaying}
                 >-</button>
                 <input
                     type="number"
@@ -146,6 +147,7 @@ const TempoControl = () => {
                         [&::-webkit-outer-spin-button]:appearance-none
                         shadow
                     "
+                    disabled={isPlaying}
                 />
                 <button 
                         onMouseDown={() => handlePressStart(increment)}
@@ -163,7 +165,8 @@ const TempoControl = () => {
                         hover:shadow-[0_0_12px_rgba(255,255,255,0.6)] 
                         hover:border-white 
                         transition duration-200
-                        focus:outline-none focus-visible:outline-white">＋</button>
+                        focus:outline-none focus-visible:outline-white"
+                        disabled={isPlaying}>＋</button>
                 <button onClick={handleTap} className="
                         w-10 h-10 rounded-full 
                         bg-gradient-to-br from-gray-700 to-black 
@@ -174,7 +177,8 @@ const TempoControl = () => {
                         hover:shadow-[0_0_12px_rgba(255,255,255,0.6)] 
                         hover:border-white 
                         transition duration-200
-                        focus:outline-none focus-visible:outline-white">TAP</button>
+                        focus:outline-none focus-visible:outline-white"
+                        disabled={isPlaying}>TAP</button>
             </div>
             <TempoAccentSelector />
         </div>
