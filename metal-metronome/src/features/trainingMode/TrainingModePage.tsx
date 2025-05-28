@@ -17,8 +17,6 @@ import React, { useState } from 'react';
 import TrainingTabs from './TrainingTabs';
 import TrainingSetting from './TrainingSetting';
 import TrainingPlayback from './TrainingPlayback';
-{/*import TrainingMeasureList from './TrainingMeasureList';
-import TrainingPlaybackControls from './TrainingPlaybackControls';*/}
 import ModeSwitch from '@/components/control/ModeSwitch';
 
 const TrainingModePage: React.FC = () => {
@@ -29,15 +27,6 @@ const TrainingModePage: React.FC = () => {
             <TrainingTabs activeTab={activeTab} onTabChange={setActiveTab} />
             {/* 中身 */}
             {activeTab === 'setting' ? <TrainingSetting /> : <TrainingPlayback />}
-
-            {/* 🎼 トレーニング設定 */}
-            {/* <TrainingSetting /> */}
-
-            {/* 🧱 小節編集リスト（仮） */}
-            {/* <TrainingMeasureList /> */}
-
-            {/* ▶️ 再生・停止ボタン */}
-            {/* <TrainingPlaybackControls /> */}
 
             {/* 🔁 モード切替 */}
             <ModeSwitch />
