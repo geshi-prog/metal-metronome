@@ -24,9 +24,10 @@ const TrainingModePage: React.FC = () => {
     return (
         <div className="flex flex-col gap-8 p-6 bg-black text-white min-h-screen items-center">
             {/* タブ切り替え */}
-            <TrainingTabs activeTab={activeTab} onTabChange={setActiveTab} />
+            {/*<TrainingTabs activeTab={activeTab} onTabChange={setActiveTab} />*/}
             {/* 中身 */}
-            {activeTab === 'setting' ? <TrainingSetting /> : <TrainingPlayback />}
+            {/*{activeTab === 'setting' ? <TrainingSetting /> : <TrainingPlayback />}*/}
+            <TrainingSetting />
 
             {/* 🔁 モード切替 */}
             <ModeSwitch />

@@ -24,14 +24,16 @@ const RhythmModePage: React.FC = () => {
 
     return (
         <div className="flex flex-col gap-8 p-6 bg-black text-white min-h-screen items-center">
-            {/* 🎼 テンポ設定 */}
-            <TempoControl />
+            <div className="flex flex-col gap-4 p-4 bg-gray-900 rounded-lg shadow-md w-full max-w-md">
+                {/* 🎼 テンポ設定 */}
+                <TempoControl />
 
-            {/* 🥁 リズムパネル表示（1〜4） */}
-            <PartPanelGrid />
+                {/* 🥁 リズムパネル表示（1〜4） */}
+                <PartPanelGrid />
 
-            {/* 🔁 モード切替 */}
-            <ModeSwitch />
+                {/* 🔁 モード切替 */}
+                <ModeSwitch />
+            </div>
         </div>
     );
 };

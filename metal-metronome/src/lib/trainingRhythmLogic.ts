@@ -155,9 +155,13 @@ export const stopTrainingPlayback = () => {
   Tone.Transport.cancel();
 };
 
+/**
+ * 音源を同期再生する
+ * @param convertedSounds RhythmPartData[][][]
+ * @param setIsPlaying 状態変更関数
+ */
 export function playTrainingRhythm(
-  clickTracksWithCountIn: ClickTrackData[][],
-  rhythmTracksWithCountIn: RhythmPartData[][][],
+  convertedSounds: RhythmPartData[][][],
   setIsPlaying: (flag: boolean) => void
 ) {
   if (!clickTracksWithCountIn || !rhythmTracksWithCountIn) {
@@ -174,7 +178,7 @@ export function stopTrainingRhythm(setIsPlaying: (flag: boolean) => void) {
   stopTrainingPlayback();
   setIsPlaying(false);
 }
-/*
+
 export function playRhythm({
   bpm,
   noteValue,
@@ -239,16 +243,12 @@ export const playSingleBeat = async (
   partIndex: number,
   startTime: number
 ) => {
-  console.log(data);
   const url = SOUND_FILES[data.sound];
-  console.log(url);
   if (!url) return;
 
-  console.log(url);
-  const player = new Tone.Player({ url }).toDestination();
-  console.log(1);
-  await player.load(url);
-  console.log(2);
+  // プレイヤー1つをロードしておく
+  const basePlayer = new Tone.Player({ url }).toDestination();
+  await basePlayer.load(url);
 
   const totalBeats = data.n;
   const beatLength = 60 / data.bpm;
@@ -260,11 +260,12 @@ export const playSingleBeat = async (
     const vol = Array.isArray(data.volume) ? data.volume[i] : data.volume ?? 1.0;
     const volDb = Tone.gainToDb(vol);
 
-    // スケジューリングタイムで設定
-    const triggerTime = startTime + interval * i;
+    // 🟡 clone して個別に鳴らす
+    const player = new Tone.Player(basePlayer.buffer).toDestination();
     player.volume.value = volDb;
+    const triggerTime = startTime + interval * i;
     player.start(triggerTime);
-    console.log(player);
+    player.stop(triggerTime + 1); // 適当な長さで止める（短すぎると再生できない）
+    Tone.Transport.scheduleOnce(() => player.dispose(), triggerTime + 2);
   }
 };
-*/
