@@ -127,7 +127,7 @@ const ExportImportControls: React.FC = () => {
   
       <div>
         <button
-          className="bg-gradient-to-br from-blue-600 to-black hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded transition duration-200"
+          className="ml-4 inline-block bg-gradient-to-br from-blue-600 to-black hover:bg-green-700 text-white font-semibold px-4 py-2 rounded cursor-pointer transition duration-200"
           onClick={handleExport}
         >
           📤 エクスポート

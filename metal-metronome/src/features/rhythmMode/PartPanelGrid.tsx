@@ -30,10 +30,12 @@ const PartPanelGrid: React.FC = () => {
             : 'grid-cols-2 grid-rows-2';
 
     return (
-        <div className="w-full max-w-md mx-auto flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-15">
             {/* テンポ用パネル（固定） */}
-            <div className="w-full">
-                <TempoPanel />
+            <div className={`grid grid-cols-1 grid-rows-1 gap-4 w-[500px] h-[200px]`}>
+                <div className="w-full h-full">
+                    <TempoPanel />
+                </div>
             </div>
 
             {/* パネル増減ボタン */}
@@ -45,7 +47,7 @@ const PartPanelGrid: React.FC = () => {
                         className={`w-10 h-10 rounded-full text-white text-xl flex items-center justify-center 
                             transition duration-200 focus:outline-none 
                             border-2 border-gray-400 bg-gradient-to-br from-gray-700 to-black
-                            ${panelCount <= 1 ? 'bg-gray-500' : 'hover:shadow hover:border-white'}`}
+                            ${panelCount <= 1 ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'}`}
                     >
                         −
                     </button>
@@ -55,14 +57,14 @@ const PartPanelGrid: React.FC = () => {
                         className={`w-10 h-10 rounded-full text-white text-xl flex items-center justify-center 
                             transition duration-200 focus:outline-none 
                             border-2 border-gray-400 bg-gradient-to-br from-gray-700 to-black
-                            ${panelCount >= 4 ? 'bg-gray-500' : 'hover:shadow hover:border-white'}`}
+                            ${panelCount >= 4 ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'}`}
                     >
                         ＋
                     </button>
                 </div>
             )}
             {/* パネル表示部分（幅・高さ固定、内部で調整） */}
-            <div className={`grid ${gridClass} ${isPlaying ? 'h-auto' : 'h-[1000px]'}`}>
+            <div className={`grid ${gridClass} w-[500px] ${isPlaying ? 'h-auto' : 'h-[1000px]'}`}>
                 {Array.from({ length: panelCount }).map((_, i) => (
                     <div key={i} className="w-full h-full">
                         <PartPanel key={i} label={labels[i]} index={i} />

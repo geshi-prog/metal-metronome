@@ -40,7 +40,7 @@ const TrainingMeasureSetting: React.FC = () => {
                     disabled={sections.length === 0}
                     className="bg-gradient-to-br from-blue-600 to-black hover:bg-blue-700 text-white px-4 py-2 rounded disabled:opacity-50"
                 >
-                    パート設定へ進む →
+                    パート設定 →
                 </button>
             </div>
 
@@ -59,7 +59,7 @@ const TrainingMeasureSetting: React.FC = () => {
                     disabled={sections.length === 0}
                     className="bg-gradient-to-br from-blue-600 to-black hover:bg-blue-700 text-white px-4 py-2 rounded disabled:opacity-50"
                 >
-                    パート設定へ進む →
+                    パート設定 →
                 </button>
             </div>
         </div>

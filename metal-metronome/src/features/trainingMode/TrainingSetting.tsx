@@ -279,7 +279,7 @@ export function generateConvertedSounds(
 }
 
 const TrainingSetting: React.FC = () => {
-    const { currentPage, setCurrentPage, sections, parts, tempoSetting, accentList, countIn, loopChangeCount, loopRepeatLimit, loopMode, tempoStep, minTempo, maxTempo, setBuiltClickTracks, builtClickTracks, setBuiltRhythmTracks, builtRhythmTracks, isPlaying, setIsPlaying, clickTracksWithCountIn, rhythmTracksWithCountIn, convertedSounds, setConvertedSounds } = useTrainingContext();
+    const { currentPage, setCurrentPage, sections, parts, tempoSetting, accentList, countIn, loopChangeCount, loopRepeatLimit, loopMode, tempoStep, minTempo, maxTempo, setBuiltClickTracks, builtClickTracks, setBuiltRhythmTracks, builtRhythmTracks, isPlaying, setIsPlaying, clickTracksWithCountIn, rhythmTracksWithCountIn, convertedSounds, setConvertedSounds, setSections, setParts, setRhythmName, setTempoSetting, setAccentType, setAccentList, setLoopMode, setTempoStep, setMinTempo, setMaxTempo, setLoopChangeCount, setLoopRepeatLimit, setCountIn } = useTrainingContext();
     useEffect(() => {
         loadTrainingSamples(4);
     }, []);
@@ -411,6 +411,33 @@ const TrainingSetting: React.FC = () => {
                     <h2 className="text-white text-xl font-bold">トレーニングモード設定</h2>
                     <RhythmNameEditor />
                     <ExportImportControls />
+                    <button
+                        onClick={() => {
+                            const confirmed = confirm('⚠️ 本当にすべての設定をリセットしますか？この操作は取り消せません。');
+                            if (!confirmed) return;
+
+                            // 初期化処理（TrainingContextの初期状態に戻す）
+                            setSections([]);
+                            setParts([]);
+                            setRhythmName('');
+                            setTempoSetting({});
+                            setAccentType('normal');
+                            setAccentList([]);
+                            setLoopMode('endless');
+                            setTempoStep(5);
+                            setMinTempo(60);
+                            setMaxTempo(180);
+                            setLoopChangeCount(2);
+                            setLoopRepeatLimit(1);
+                            setCountIn(false);
+                            setBuiltClickTracks([]);
+                            setBuiltRhythmTracks([]);
+                            setConvertedSounds([]);
+                        }}
+                        className="bg-gradient-to-br from-red-700 to-black hover:bg-red-800 text-white px-4 py-2 rounded"
+                    >
+                        ⚠️ すべての設定をリセット
+                    </button>
                     <button
                         onClick={() => setCurrentPage('measure')}
                         className="mt-4 bg-gradient-to-br from-blue-600 to-black hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded transition duration-200"
