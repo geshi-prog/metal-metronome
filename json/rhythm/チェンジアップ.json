@@ -1,0 +1,2009 @@
+{
+  "sections": [
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    },
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 100,
+      "loopCount": 1,
+      "parts": []
+    }
+  ],
+  "parts": [
+    {
+      "beats": [
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "beats": [
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "snare",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "snare",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "snare",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "snare",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "snare",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "snare",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "snare",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "snare",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 2,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 2,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 2,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 2,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 4,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 4,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 4,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 4,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 4,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 4,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 4,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 4,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 6,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 6,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 6,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 6,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 6,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 6,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 6,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 6,
+          "sound": "snare",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "beats": [
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "beats": [
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "rhythmName": "チェンジアップ",
+  "tempoSetting": {
+    "loopCountPerStep": 2,
+    "tempoStep": 5,
+    "minTempo": 60,
+    "maxTempo": 180,
+    "mode": "endless",
+    "includeCountIn": false
+  },
+  "accentType": "normal",
+  "accentList": [
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal",
+    "strong",
+    "normal",
+    "normal",
+    "normal"
+  ],
+  "loopMode": "accelerate",
+  "tempoStep": 5,
+  "minTempo": 60,
+  "maxTempo": 180,
+  "loopChangeCount": 2,
+  "loopRepeatLimit": 0,
+  "countIn": true
+}

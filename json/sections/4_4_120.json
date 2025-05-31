@@ -1,0 +1,187 @@
+{
+  "sections": [
+    {
+      "numerator": 4,
+      "denominator": 4,
+      "noteValue": "quarter",
+      "bpm": 120,
+      "loopCount": 1,
+      "parts": []
+    }
+  ],
+  "parts": [
+    {
+      "beats": [
+        {
+          "isStart": true,
+          "n": 4,
+          "m": 5,
+          "sound": "ride_crash",
+          "volumes": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "beats": [
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 2,
+          "m": 1,
+          "sound": "hihat_pedal",
+          "volumes": [
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "beats": [
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 2,
+          "sound": "ride_crash",
+          "volumes": [
+            1,
+            1
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "beats": [
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 1,
+          "sound": "kick",
+          "volumes": [
+            0
+          ]
+        },
+        {
+          "isStart": true,
+          "n": 1,
+          "m": 3,
+          "sound": "tom_low1",
+          "volumes": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "accentList": [
+    "strong",
+    "normal",
+    "weak",
+    "normal"
+  ]
+}
